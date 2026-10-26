@@ -1,0 +1,31 @@
+{
+  "name": "演示候选人（虚构）",
+  "contact_line": "demo@example.com | 示例城市 | 文档排版演示",
+  "sections": [
+    {
+      "title": "教育经历",
+      "entries": [
+        {
+          "heading": "示例大学 | 计算机相关专业",
+          "date": "2021—2025",
+          "bullets": [
+            "这是虚构示例，仅用于检验文档结构与排版。"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "项目经历",
+      "entries": [
+        {
+          "heading": "本地文档生成演示",
+          "date": "2026",
+          "bullets": [
+            "将明确提供的结构化内容渲染为Word，不补造真实用户经历。",
+            "项目示例链接：https://example.com/demo-project"
+          ]
+        }
+      ]
+    }
+  ]
+}

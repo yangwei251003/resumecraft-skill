@@ -1,0 +1,200 @@
+{
+  "profile_version": "1.0",
+  "created_at": "2025-06-20",
+  "updated_at": "2025-06-20",
+  "basic_info": {
+    "name": "李明",
+    "phone": "示例电话（未提供）",
+    "email": "demo@example.com",
+    "current_city": "示例城市",
+    "job_search_status": "应届生",
+    "target_direction": "数据分析 / 商业分析",
+    "target_city": "示例城市或示例城市",
+    "expected_salary": "未填写（虚构示例）",
+    "links": {
+      "github": "example.com/demo-profile",
+      "portfolio": "",
+      "linkedin": "",
+      "other": ""
+    }
+  },
+  "education": [
+    {
+      "school": "示例城市大学",
+      "major": "信息管理与信息系统",
+      "degree": "本科",
+      "period": "2021.09 - 2025.06",
+      "gpa_rank": "3.6/4.0（前20%）",
+      "core_courses": "统计学、Python数据分析、数据库原理、数据挖掘、管理学",
+      "thesis_direction": "基于用户行为数据的电商推荐策略研究",
+      "campus_experience": "数据分析社团副社长，组织过2次校内数据分析比赛",
+      "relevant_coursework_projects": "课程设计：用Python分析示例城市地铁客流数据，可视化站点热力图"
+    }
+  ],
+  "internships_jobs": [
+    {
+      "company": "ABC科技公司",
+      "role": "数据分析实习生",
+      "period": "2024.06 - 2024.09",
+      "responsibilities": "负责业务部门日常数据提取和报表制作",
+      "modules_owned": "日报自动化生成、用户行为数据清洗",
+      "tools_used": "Python(Pandas/Matplotlib)、Excel、SQL（基础查询）",
+      "deliverables": "搭建了日报自动化脚本，将每日报表从手动2小时缩短到5分钟",
+      "quantified_impact": "日均处理5000+条用户行为数据，3个月内支持了3个业务决策",
+      "problems_faced": "手动做日报太费时间，每天重复劳动",
+      "solutions": "用Python写自动化脚本：定时从数据库提取数据、清洗、生成图表、邮件发送",
+      "collaborators": "运营团队3人、产品经理1人",
+      "skills_demonstrated": "Python数据处理、自动化脚本、报表可视化、跨部门沟通"
+    }
+  ],
+  "projects": [
+    {
+      "name": "校园二手交易平台数据分析",
+      "background": "学校二手交易微信群消息太多，想分析交易规律",
+      "goal": "分析校园二手交易的热门商品、价格规律和交易高峰时段",
+      "scenario_users": "校内学生",
+      "my_role": "独立完成，从数据采集到分析全流程",
+      "tools_methods": "Python(Pandas/Matplotlib/Seaborn)、手动爬取微信群消息",
+      "process": "爬取3000+条交易消息 → 数据清洗和分类 → 统计分析 → 可视化报告",
+      "outcome": "产出了一份分析报告，发现数码产品和教材是最热门品类，晚上8-10点交易最活跃",
+      "quantified_metrics": "分析3000+条交易数据，识别出5大热门品类，准确率约85%",
+      "highlights": "从零搭建数据采集到分析的完整pipeline，发现问题驱动的好奇心",
+      "transferable_skills": "数据采集、数据清洗、统计分析、可视化、报告写作"
+    },
+    {
+      "name": "电商用户流失预测模型（毕设）",
+      "background": "电商平台用户流失率高，企业需要提前识别风险用户",
+      "goal": "构建用户流失预测模型，识别即将流失的用户",
+      "scenario_users": "电商平台运营团队",
+      "my_role": "独立完成，从数据预处理到模型训练评估",
+      "tools_methods": "Python(Scikit-learn、Pandas)、逻辑回归、随机森林",
+      "process": "数据探索 → 特征工程 → 模型训练 → 评估调优 → 撰写论文",
+      "outcome": "模型准确率82%，AUC 0.87，可识别约70%的潜在流失用户",
+      "quantified_metrics": "准确率82%，AUC 0.87，特征重要性分析发现最近登录间隔是最关键指标",
+      "highlights": "完整走了一遍机器学习项目流程，特征工程部分得到了导师好评",
+      "transferable_skills": "机器学习建模、特征工程、Python数据分析、学术写作"
+    }
+  ],
+  "core_experiences": [
+    {
+      "title": "从手动做报表到全自动化",
+      "background": "实习期间每天需要花2小时做数据日报，重复枯燥",
+      "actions": "自学Python自动化脚本，写了定时任务从数据库提取数据→清洗→生成图表→自动发送邮件给运营团队",
+      "results_with_data": "将日报制作时间从2小时降到5分钟，3个月内零出错，运营团队反馈数据及时性明显提升",
+      "tags": [
+        "自动化",
+        "Python",
+        "效率提升",
+        "主动解决问题"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "数据分析",
+      "name": "Python数据分析",
+      "level": "熟悉",
+      "evidence": "实习期间独立完成日报自动化；毕设中用Pandas处理10万+用户数据"
+    },
+    {
+      "category": "数据分析",
+      "name": "SQL",
+      "level": "基础",
+      "evidence": "实习中用过基础SELECT/JOIN查询，目前在系统学习高级查询"
+    },
+    {
+      "category": "数据分析",
+      "name": "Excel",
+      "level": "熟练",
+      "evidence": "日常大量使用，包括透视表、VLOOKUP、基础图表"
+    },
+    {
+      "category": "数据分析",
+      "name": "数据可视化",
+      "level": "熟悉",
+      "evidence": "用Matplotlib/Seaborn做过课程项目和实习报表"
+    },
+    {
+      "category": "AI工具",
+      "name": "ChatGPT/编程助手",
+      "level": "熟练",
+      "evidence": "日常使用辅助学习和代码编写"
+    },
+    {
+      "category": "办公",
+      "name": "Office/WPS",
+      "level": "熟练",
+      "evidence": "日常使用"
+    },
+    {
+      "category": "语言",
+      "name": "英语",
+      "level": "熟悉",
+      "evidence": "CET-6 550分，能阅读英文技术文档"
+    },
+    {
+      "category": "编程技术",
+      "name": "Python",
+      "level": "熟悉",
+      "evidence": "毕设+实习+课程项目都用到，能独立完成数据分析全流程"
+    }
+  ],
+  "certificates_honors": [
+    {
+      "name": "全国大学生数学建模竞赛省级二等奖",
+      "issuer": "中国工业与应用数学学会",
+      "date": "2023.11",
+      "level": "省级",
+      "relevance": "体现数据建模与分析能力",
+      "verifiable": true
+    },
+    {
+      "name": "大学英语六级(CET-6)",
+      "issuer": "教育部",
+      "date": "2024.06",
+      "level": "国家级",
+      "relevance": "基础英语能力",
+      "verifiable": true
+    }
+  ],
+  "portfolio": [
+    {
+      "name": "校园二手交易数据分析报告",
+      "link": "example.com/demo-profile/campus-trade-analysis",
+      "type": "数据分析项目",
+      "background": "分析校园二手交易规律",
+      "my_part": "独立完成全流程",
+      "outcome_data": "分析3000+条数据，产出可视化报告",
+      "suitable_for_roles": "数据分析师、BI分析师"
+    }
+  ],
+  "self_reflection": {
+    "best_at": "用数据解决实际问题，特别是从杂乱数据中找到insight",
+    "most_fulfilling_achievement": "实习时把日报从2小时自动化到5分钟，看到团队因为更及时的数据做出更好的决策",
+    "career_goal": "3-5年内成为能独立负责业务线的数据分析师，再往数据科学家发展",
+    "dislikes": "纯重复性工作、没有成长空间、不重视数据的团队",
+    "strengths": [
+      "数据敏感度高，能从数据中发现业务问题和机会",
+      "自学能力强，日报自动化是自学的Python并在2周内落地",
+      "沟通不错，实习时能顺畅对接运营团队理解需求"
+    ],
+    "weaknesses": [
+      "SQL只到基础查询水平，需要加强复杂查询和数据库管理",
+      "缺乏大厂或正式工作的经验，对业务理解的深度有限",
+      "统计学基础偏理论，实际应用经验不足"
+    ],
+    "willing_to_learn_short_term": [
+      "SQL高级查询",
+      "Power BI/Tableau",
+      "A/B测试"
+    ],
+    "target_industries": [
+      "互联网",
+      "电商",
+      "金融科技"
+    ]
+  },
+  "generated_resumes": [],
+  "target_jobs": [],
+  "example_notice": "虚构人物及经历，仅演示数据结构，不代表作者或真实求职者。"
+}

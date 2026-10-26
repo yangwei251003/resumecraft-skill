@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "简历内容结构（build_resume.js 输入）",
+  "description": "喂给 scripts/build_resume.js 的 JSON 结构，AI 负责按此格式输出内容，脚本负责排版",
+  "type": "object",
+  "required": ["name", "contact_line", "sections"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "姓名，显示为深蓝色大标题（18pt 加粗）"
+    },
+    "contact_line": {
+      "type": "string",
+      "description": "联系方式一行：电话 | 邮箱 | 城市 | 求职意向等，显示为灰色小字（9pt）"
+    },
+    "photo_path": {
+      "type": "string",
+      "description": "证件照本地路径（可选）。如提供，build_resume.js 会用 --photo 参数嵌入"
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "description": "简历模块数组，顺序决定渲染顺序",
+      "items": {
+        "type": "object",
+        "required": ["title"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "模块标题（如：教育经历、项目经历），显示为深蓝加粗+底部线"
+          },
+          "entries": {
+            "type": "array",
+            "description": "结构化条目列表（用于有日期+副标题+bullets的经历）",
+            "items": {
+              "type": "object",
+              "required": ["heading"],
+              "properties": {
+                "heading": {
+                  "type": "string",
+                  "description": "主标题（如：公司名 | 岗位）。加粗显示，左侧对齐"
+                },
+                "date": {
+                  "type": "string",
+                  "description": "日期信息。通过右对齐Tab定位到页面最右，灰色显示"
+                },
+                "subheading": {
+                  "type": "string",
+                  "description": "副标题（可选）。斜体、灰色、比正文小1pt"
+                },
+                "bullets": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "description": "bullet 列表，每项 1 行。文本中的 URL 会自动变为可点击超链接",
+                  "maxItems": 4
+                }
+              }
+            }
+          },
+          "freeform_bullets": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "自由列表（用于技能清单、荣誉奖项、证书等不需要日期的内容）"
+          }
+        },
+        "oneOf": [
+          { "required": ["entries"] },
+          { "required": ["freeform_bullets"] }
+        ]
+      }
+    },
+    "summary": {
+      "type": "string",
+      "description": "自我评价段落（可选，通常作为第一个 section 出现）"
+    }
+  },
+  "examples": [
+    {
+      "comment": "简洁示例",
+      "name": "张三",
+      "contact_line": "138xxxx | zhang@email.com | 深圳 | 数据分析师",
+      "sections": [
+        {
+          "title": "教育经历",
+          "entries": [
+            {
+              "heading": "深圳大学 | 信息管理与信息系统 本科",
+              "date": "2021.09 - 2025.06",
+              "subheading": "GPA 3.6/4.0 | 前20%",
+              "bullets": ["核心课程：统计学、Python数据分析、数据库原理、数据挖掘"]
+            }
+          ]
+        },
+        {
+          "title": "技能清单",
+          "freeform_bullets": ["Python/Pandas/Matplotlib：熟练", "SQL：基础（正在学习高级查询）", "Excel：熟练"]
+        }
+      ]
+    }
+  ]
+}

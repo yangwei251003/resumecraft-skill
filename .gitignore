@@ -1,0 +1,14 @@
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+.runtime/
+output/
+outputs/
+knowledge_base/
+private/
+.env
+.env.*
+
+.npm-cache/
+%USERPROFILE%/

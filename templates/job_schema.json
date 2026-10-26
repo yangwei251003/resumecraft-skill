@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "岗位信息结构化数据",
+  "description": "岗位 JD 解析后的结构化数据格式",
+  "type": "object",
+  "properties": {
+    "job_info": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "岗位名称" },
+        "company": { "type": "string", "description": "公司名称" },
+        "industry": { "type": "string", "description": "所属行业" },
+        "department": { "type": "string", "description": "所属部门" },
+        "location": { "type": "string", "description": "工作地点" },
+        "salary_range": { "type": "string", "description": "薪资范围" },
+        "experience_required": { "type": "string", "description": "经验要求" },
+        "education_required": { "type": "string", "description": "学历要求" }
+      }
+    },
+    "core_responsibilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": { "type": "string", "description": "职责描述" },
+          "type": { "type": "string", "enum": ["核心", "辅助"], "description": "核心/辅助" },
+          "required_ability": { "type": "string", "description": "对应能力要求" },
+          "time_ratio": { "type": "string", "description": "预估时间占比" }
+        }
+      }
+    },
+    "requirements": {
+      "type": "object",
+      "properties": {
+        "hard_requirements": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "硬性要求（门槛项）"
+        },
+        "core_abilities": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "核心能力要求"
+        },
+        "hidden_preferences": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "隐性偏好"
+        }
+      }
+    },
+    "ats_keywords": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "ATS 高频关键词（按重要性排序）"
+    },
+    "must_have_skills": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "必备技能"
+    },
+    "nice_to_have_skills": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "加分技能"
+    },
+    "real_requirements": {
+      "type": "string",
+      "description": "该岗位真正看重的能力（区别于JD字面表述）"
+    },
+    "resume_signals": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "面试官筛选简历的关键信号"
+    },
+    "candidate_profile": {
+      "type": "object",
+      "properties": {
+        "suitable_traits": { "type": "array", "items": { "type": "string" } },
+        "unsuitable_traits": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

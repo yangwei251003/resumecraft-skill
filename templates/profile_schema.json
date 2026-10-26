@@ -1,0 +1,236 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "个人职业知识库",
+  "description": "ResumeCraft 用户职业知识库数据结构，支持版本管理",
+  "type": "object",
+  "required": ["basic_info", "education", "skills", "self_reflection"],
+  "properties": {
+    "basic_info": {
+      "type": "object",
+      "required": ["name", "phone", "email", "job_search_status", "target_direction"],
+      "properties": {
+        "name": { "type": "string", "description": "姓名" },
+        "phone": { "type": "string", "description": "手机号" },
+        "email": { "type": "string", "description": "邮箱" },
+        "current_city": { "type": "string", "description": "当前所在城市" },
+        "job_search_status": {
+          "type": "string",
+          "enum": ["在职看机会", "应届生", "已离职", "实习中", "在校生"],
+          "description": "求职状态"
+        },
+        "target_direction": { "type": "string", "description": "意向岗位方向" },
+        "target_city": { "type": "string", "description": "意向城市" },
+        "photo": {
+          "type": "string",
+          "description": "简历证件照：base64 编码的图片数据或本地文件路径"
+        },
+        "expected_salary": { "type": "string", "description": "期望薪资（可选）" },
+        "links": {
+          "type": "object",
+          "properties": {
+            "github": { "type": "string" },
+            "portfolio": { "type": "string" },
+            "linkedin": { "type": "string" },
+            "other": { "type": "string", "description": "小红书/B站/知乎等" }
+          }
+        }
+      }
+    },
+    "education": {
+      "type": "array",
+      "description": "教育经历",
+      "items": {
+        "type": "object",
+        "required": ["school", "major", "degree", "period"],
+        "properties": {
+          "school": { "type": "string", "description": "学校名称" },
+          "major": { "type": "string", "description": "专业" },
+          "degree": { "type": "string", "description": "学历" },
+          "period": { "type": "string", "description": "就读时间" },
+          "gpa_rank": { "type": "string", "description": "GPA/排名（可选）" },
+          "core_courses": { "type": "string", "description": "核心课程" },
+          "thesis_direction": { "type": "string", "description": "毕设方向（可选）" },
+          "campus_experience": { "type": "string", "description": "校内经历" },
+          "relevant_coursework_projects": { "type": "string", "description": "相关课程项目" }
+        }
+      }
+    },
+    "internships_jobs": {
+      "type": "array",
+      "description": "实习/工作经历",
+      "items": {
+        "type": "object",
+        "required": ["company", "role", "period", "responsibilities"],
+        "properties": {
+          "company": { "type": "string", "description": "公司名称" },
+          "role": { "type": "string", "description": "岗位名称" },
+          "period": { "type": "string", "description": "时间段" },
+          "responsibilities": { "type": "string", "description": "职责描述" },
+          "modules_owned": { "type": "string", "description": "负责模块" },
+          "tools_used": { "type": "string", "description": "使用工具" },
+          "deliverables": { "type": "string", "description": "产出物" },
+          "quantified_impact": { "type": "string", "description": "量化成果" },
+          "problems_faced": { "type": "string", "description": "遇到的问题" },
+          "solutions": { "type": "string", "description": "解决方案" },
+          "collaborators": { "type": "string", "description": "协作方" },
+          "skills_demonstrated": { "type": "string", "description": "体现的技能" }
+        }
+      }
+    },
+    "projects": {
+      "type": "array",
+      "description": "项目经历",
+      "items": {
+        "type": "object",
+        "required": ["name", "my_role"],
+        "properties": {
+          "name": { "type": "string", "description": "项目名称" },
+          "background": { "type": "string", "description": "项目背景" },
+          "goal": { "type": "string", "description": "项目目标" },
+          "scenario_users": { "type": "string", "description": "场景/用户" },
+          "my_role": { "type": "string", "description": "我的角色" },
+          "tools_methods": { "type": "string", "description": "工具方法" },
+          "process": { "type": "string", "description": "过程" },
+          "outcome": { "type": "string", "description": "成果" },
+          "quantified_metrics": { "type": "string", "description": "量化指标" },
+          "highlights": { "type": "string", "description": "亮点" },
+          "transferable_skills": { "type": "string", "description": "可迁移技能" }
+        }
+      }
+    },
+    "core_experiences": {
+      "type": "array",
+      "description": "核心经历",
+      "items": {
+        "type": "object",
+        "required": ["title", "actions", "results_with_data"],
+        "properties": {
+          "title": { "type": "string", "description": "标题" },
+          "background": { "type": "string", "description": "背景" },
+          "actions": { "type": "string", "description": "具体行动" },
+          "results_with_data": { "type": "string", "description": "带数据的结果" },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "标签"
+          }
+        }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "description": "技能清单",
+      "items": {
+        "type": "object",
+        "required": ["category", "name", "level"],
+        "properties": {
+          "category": {
+            "type": "string",
+            "enum": ["办公", "数据分析", "AI工具", "编程技术", "设计内容运营", "商业分析", "沟通协作", "语言", "行业知识", "其他"],
+            "description": "技能类别"
+          },
+          "name": { "type": "string", "description": "技能名称" },
+          "level": {
+            "type": "string",
+            "enum": ["了解", "基础", "熟悉", "熟练", "精通"],
+            "description": "掌握程度"
+          },
+          "evidence": { "type": "string", "description": "掌握证据" }
+        }
+      }
+    },
+    "certificates_honors": {
+      "type": "array",
+      "description": "证书/荣誉",
+      "items": {
+        "type": "object",
+        "required": ["name", "date"],
+        "properties": {
+          "name": { "type": "string", "description": "名称" },
+          "issuer": { "type": "string", "description": "颁发机构" },
+          "date": { "type": "string", "description": "获得时间" },
+          "level": { "type": "string", "description": "等级/级别" },
+          "relevance": { "type": "string", "description": "与目标岗位的相关性" },
+          "verifiable": { "type": "boolean", "description": "是否可验证", "default": true }
+        }
+      }
+    },
+    "portfolio": {
+      "type": "array",
+      "description": "作品/案例",
+      "items": {
+        "type": "object",
+        "required": ["name", "type"],
+        "properties": {
+          "name": { "type": "string", "description": "作品名称" },
+          "link": { "type": "string", "description": "链接" },
+          "type": { "type": "string", "description": "类型" },
+          "background": { "type": "string", "description": "背景" },
+          "my_part": { "type": "string", "description": "我的贡献" },
+          "outcome_data": { "type": "string", "description": "成果数据" },
+          "suitable_for_roles": { "type": "string", "description": "适合岗位" }
+        }
+      }
+    },
+    "self_reflection": {
+      "type": "object",
+      "description": "自我认知",
+      "required": ["best_at", "strengths", "weaknesses"],
+      "properties": {
+        "best_at": { "type": "string", "description": "最擅长什么" },
+        "most_fulfilling_achievement": { "type": "string", "description": "最有成就感的事" },
+        "career_goal": { "type": "string", "description": "职业目标" },
+        "dislikes": { "type": "string", "description": "不喜欢的工作类型" },
+        "strengths": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 2,
+          "description": "优势（至少2条具体描述）"
+        },
+        "weaknesses": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 2,
+          "description": "短板（至少2条具体描述）"
+        },
+        "willing_to_learn_short_term": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "愿意短期学习的技能"
+        },
+        "target_industries": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "目标行业"
+        }
+      }
+    },
+    "generated_resumes": {
+      "type": "array",
+      "description": "已生成简历记录（版本管理）",
+      "items": {
+        "type": "object",
+        "properties": {
+          "version": { "type": "string", "description": "版本号" },
+          "target_job": { "type": "string", "description": "对应岗位" },
+          "generated_at": { "type": "string", "description": "生成时间" },
+          "profile_version": { "type": "string", "description": "对应的知识库版本" }
+        }
+      }
+    },
+    "target_jobs": {
+      "type": "array",
+      "description": "已分析岗位记录",
+      "items": {
+        "type": "object",
+        "properties": {
+          "job_title": { "type": "string" },
+          "company": { "type": "string" },
+          "analyzed_at": { "type": "string" },
+          "match_summary": { "type": "string" },
+          "investment_advice": { "type": "string" }
+        }
+      }
+    }
+  }
+}
